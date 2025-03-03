@@ -1,0 +1,32 @@
+﻿ 
+
+
+ 
+<div class=" d-flex justify-content-between align-items-center">
+    <h1 class="category-title">All Categories</h1>
+ </div>
+
+<table class="table caption-top">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">CategoryName</th>
+            <th scope="col">Show Movies</th>
+         </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+    
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td>@item.Name</td>
+                <td> <a href="/Customer/Category/ShowMovies?categoryId=@item.Id" class="btn btn-primary">ShowMovies</a></td>
+               
+
+            </tr>
+        }
+        
+        
+    </tbody>
+</table>

@@ -1,0 +1,143 @@
+﻿.Img-Container {
+    overflow: hidden;
+    position: relative;
+    height: 250px;
+}
+
+.card-main {
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+    .card-main:hover {
+        transform: scale(1.02);
+    }
+
+.Img-Container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.1);
+    transition: transform 0.4s ease;
+}
+
+    .Img-Container img:hover {
+        transform: scale(1);
+    }
+
+.Card-label {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+}
+.card-title {
+    font-size: 22px;  
+    font-weight: bold;
+}
+
+.card-body p {
+    font-size: 16px;  
+    color: #666;  
+}
+
+
+    .Card-label .category {
+        color: white;
+        background-color: #ff5722;  
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .Card-label .remain-days {
+        color: white;
+        background-color: green;
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+    .card-title p {
+        font-size: 14px;
+        color: #555;
+    }
+.availability {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background: #f8f9fa;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+    .availability h4 {
+        font-size: 18px;
+        margin: 0;
+        color: #333;
+    }
+
+.price {
+    font-weight: bold;
+    color: #28a745;  
+}
+
+.availability-btn {
+    font-size: 14px;
+    padding: 6px 12px;
+    font-weight: bold;
+}
+
+.buttons-container {
+    display: flex;
+    gap: 10px;
+}
+
+.details-btn {
+    background-color: #17a2b8;
+    color: white;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+    .details-btn:hover {
+        background-color: #138496;
+    }
+
+.book-btn {
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+    .book-btn:hover {
+        background-color: #0056b3;
+    }
+

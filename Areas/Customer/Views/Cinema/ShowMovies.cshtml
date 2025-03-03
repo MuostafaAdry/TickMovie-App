@@ -1,0 +1,66 @@
+﻿ @model IEnumerable<Movie>
+
+@section MoviesStyle {
+    <link rel="stylesheet" href="~/css/Movies.css" />
+}
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4 col-md-6 col-sm-12 mb-3">
+                <div class="card card-main">
+                    <div class="Img-Container">
+                        <a href="/Customer/Home/MoreDetails?movieId=@item.Id" class="btn btn-success">
+                            <img src="~/movies/@item?.ImgUrl" class="img-fluid rounded-start" alt="@item.Name">
+                        </a>
+                        <div class="Card-label">
+                            <span class="category">@item.Category.Name</span>
+                            <span class="remain-days">
+                                @((item.EndDate.ToDateTime(TimeOnly.MinValue) - item.StartDate.ToDateTime(TimeOnly.MinValue)).Days) Days Remain
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">@item.Name</h3>
+                        <p class="card-title">Cinema: @item.Cinema.Name</p>
+                        <p class="card-title">Started At: @item.StartDate</p>
+                        @* <p class="card-title">Until: @item.EndDate</p> *@
+                        <div class="availability">
+                            <h4>Price: <span class="price">@item.Price$</span></h4>
+                            @if (item.MovieStatus == 1)
+                            {
+                                <button type="button" class="btn btn-success availability-btn">Available</button>
+                            }
+                            else if (item.MovieStatus == 0)
+                            {
+                                <button type="button" class="btn btn-danger availability-btn">Expired</button>
+                            }
+                            else
+                            {
+                                <button type="button" class="btn btn-info">UpComing</button>
+                            }
+                        </div>
+
+                        <div class="buttons-container display-1 justify-content-between">
+                            <a href="/Customer/Home/MoreDetails?movieId=@item.Id" class="btn btn-success">More Details</a>
+                            @if (item.MovieStatus == 1)
+                            {
+                                <button type="button" class="btn btn-primary book-btn">Book Ticket</button>
+                            }
+                            else if (item.MovieStatus == 0)
+                            {
+                                <button type="button" class="btn btn-secondary">Book Ticket</button>
+                            }
+                            else
+                            {
+                                <button type="button" class="btn btn-warning">Book Ticket</button>
+                            }
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

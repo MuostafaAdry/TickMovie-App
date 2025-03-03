@@ -1,0 +1,82 @@
+﻿@model Actor
+
+<div class="container mt-5">
+    <div class="row">
+         <div class="col-md-4">
+            <img src="~/images/cast/@Model.ProfilePicture" class="img-fluid rounded shadow-lg w-50" alt="@Model.FirstName @Model.LastName">
+        </div>
+         
+        <div class="col-md-8">
+            <h2 class="text-primary">@Model.FirstName @Model.LastName</h2>
+            <p><strong>Bio:</strong> @Model.Bio</p>
+        </div>
+    </div>
+
+    <hr class="my-4">
+@section MoviesStyle {
+<link rel="stylesheet" href="~/css/Movies.css" />
+}
+    <div class="container ">
+    <div class="row">
+            @foreach (var item in Model.ActorMovies)
+        {
+                <div class="col-lg-4 col-md-6 col-sm-12 mb-3  ">
+                <div class="card card-main">
+                    <div class="Img-Container">
+                            <a href="@Url.Action("MoreDetails", "Home", new { movieId = item.Movie.Id })">
+                                <img src="@Url.Content("~/movies/" + item.Movie.ImgUrl)" class="img-fluid rounded-start" alt="@item.Movie.Name">
+                        </a>
+
+                        <div class="Card-label">
+                            <span class="category">@item.Movie.Category.Name</span>
+                            <span class="remain-days">
+                                    @((item.Movie.EndDate.ToDateTime(TimeOnly.MinValue) - item.Movie.StartDate.ToDateTime(TimeOnly.MinValue)).Days) Days Remain
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                            <h3 class="card-title">@item.Movie.Name</h3>
+                            <p class="card-title">Cinema: @item.Movie.Cinema.Name</p>
+                            <p class="card-title">Started At: @item.Movie.StartDate</p>
+                        @* <p class="card-title">Until: @item.EndDate</p> *@
+                        <div class="availability">
+                                <h4>Price: <span class="price">@item.Movie.Price$</span></h4>
+                                @if (item.Movie.MovieStatus == 1)
+                            {
+                                <button type="button" class="btn btn-success availability-btn">Available</button>
+                            }
+                                else if (item.Movie.MovieStatus == 0)
+                            {
+                                <button type="button" class="btn btn-danger availability-btn">Expired</button>
+                            }
+                            else
+                            {
+                                <button type="button" class="btn btn-info">UpComing</button>
+                            }
+                        </div>
+
+                        <div class="buttons-container display-1 justify-content-between">
+                            <a href="/Customer/Home/MoreDetails?movieId=@item.Id" class="btn btn-success">More Details</a>
+                                @if (item.Movie.MovieStatus == 1)
+                            {
+                                <button type="button" class="btn btn-primary book-btn">Book Ticket</button>
+                            }
+                                else if (item.Movie.MovieStatus == 0)
+                            {
+                                <button type="button" class="btn btn-secondary">Book Ticket</button>
+                            }
+                            else
+                            {
+                                <button type="button" class="btn btn-warning">Book Ticket</button>
+                            }
+                             
+                        </div>
+
+                    </div> 
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+</div>
