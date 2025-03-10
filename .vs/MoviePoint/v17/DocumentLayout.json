@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6EA743A2-7D58-401D-82DF-69B6C726749A}|MoviePoint.csproj|c:\\users\\user\\desktop\\.nettasks\\moviepoint\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6EA743A2-7D58-401D-82DF-69B6C726749A}|MoviePoint.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{6EA743A2-7D58-401D-82DF-69B6C726749A}|MoviePoint.csproj|c:\\users\\user\\desktop\\.nettasks\\moviepoint\\models\\cinema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EA743A2-7D58-401D-82DF-69B6C726749A}|MoviePoint.csproj|solutionrelative:models\\cinema.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EA743A2-7D58-401D-82DF-69B6C726749A}|MoviePoint.csproj|c:\\users\\user\\desktop\\.nettasks\\moviepoint\\areas\\customer\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6EA743A2-7D58-401D-82DF-69B6C726749A}|MoviePoint.csproj|solutionrelative:areas\\customer\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{6EA743A2-7D58-401D-82DF-69B6C726749A}|MoviePoint.csproj|c:\\users\\user\\desktop\\.nettasks\\moviepoint\\models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EA743A2-7D58-401D-82DF-69B6C726749A}|MoviePoint.csproj|solutionrelative:models\\movie.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EA743A2-7D58-401D-82DF-69B6C726749A}|MoviePoint.csproj|c:\\users\\user\\desktop\\.nettasks\\moviepoint\\areas\\customer\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EA743A2-7D58-401D-82DF-69B6C726749A}|MoviePoint.csproj|solutionrelative:areas\\customer\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6EA743A2-7D58-401D-82DF-69B6C726749A}|MoviePoint.csproj|c:\\users\\user\\desktop\\.nettasks\\moviepoint\\dataaccess\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EA743A2-7D58-401D-82DF-69B6C726749A}|MoviePoint.csproj|solutionrelative:dataaccess\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EA743A2-7D58-401D-82DF-69B6C726749A}|MoviePoint.csproj|c:\\users\\user\\desktop\\.nettasks\\moviepoint\\areas\\customer\\controllers\\cinemacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EA743A2-7D58-401D-82DF-69B6C726749A}|MoviePoint.csproj|solutionrelative:areas\\customer\\controllers\\cinemacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6EA743A2-7D58-401D-82DF-69B6C726749A}|MoviePoint.csproj|c:\\users\\user\\desktop\\.nettasks\\moviepoint\\models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6EA743A2-7D58-401D-82DF-69B6C726749A}|MoviePoint.csproj|solutionrelative:models\\applicationuser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6EA743A2-7D58-401D-82DF-69B6C726749A}|MoviePoint.csproj|c:\\users\\user\\desktop\\.nettasks\\moviepoint\\areas\\customer\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6EA743A2-7D58-401D-82DF-69B6C726749A}|MoviePoint.csproj|solutionrelative:areas\\customer\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6EA743A2-7D58-401D-82DF-69B6C726749A}|MoviePoint.csproj|c:\\users\\user\\desktop\\.nettasks\\moviepoint\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6EA743A2-7D58-401D-82DF-69B6C726749A}|MoviePoint.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,66 +35,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "CategoryController.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\Areas\\Customer\\Controllers\\CategoryController.cs",
-              "RelativeDocumentMoniker": "Areas\\Customer\\Controllers\\CategoryController.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\Areas\\Customer\\Controllers\\CategoryController.cs",
-              "RelativeToolTip": "Areas\\Customer\\Controllers\\CategoryController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-03T19:49:13.825Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CinemaController.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\Areas\\Customer\\Controllers\\CinemaController.cs",
-              "RelativeDocumentMoniker": "Areas\\Customer\\Controllers\\CinemaController.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\Areas\\Customer\\Controllers\\CinemaController.cs",
-              "RelativeToolTip": "Areas\\Customer\\Controllers\\CinemaController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-03T19:49:00.358Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAAAAYAAABPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-03T19:38:17.711Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-10T20:21:10.433Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\Areas\\Customer\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "Areas\\Customer\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\Areas\\Customer\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "Areas\\Customer\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-03T19:02:36.241Z",
+              "Title": "Movie.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\Models\\Movie.cs",
+              "RelativeDocumentMoniker": "Models\\Movie.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\Models\\Movie.cs",
+              "RelativeToolTip": "Models\\Movie.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAAA4AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T19:59:39.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Cinema.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\Models\\Cinema.cs",
+              "RelativeDocumentMoniker": "Models\\Cinema.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\Models\\Cinema.cs",
+              "RelativeToolTip": "Models\\Cinema.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAABUAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T19:59:31.445Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ApplicationUser.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\Models\\ApplicationUser.cs",
+              "RelativeDocumentMoniker": "Models\\ApplicationUser.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\Models\\ApplicationUser.cs",
+              "RelativeToolTip": "Models\\ApplicationUser.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAQAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-10T19:50:20.064Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\Areas\\Customer\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Areas\\Customer\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\Areas\\Customer\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Areas\\Customer\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\DataAccess\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "DataAccess\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\DataAccess\\ApplicationDbContext.cs",
+              "RelativeToolTip": "DataAccess\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-03T19:02:27.775Z",
+              "WhenOpened": "2025-03-10T19:44:12.349Z",
               "EditorCaption": ""
             }
           ]

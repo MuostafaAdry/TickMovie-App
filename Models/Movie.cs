@@ -1,20 +1,52 @@
-﻿using MoviePoint.Models;
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-public class Movie
+namespace MoviePoint.Models
 {
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public string Description { get; set; }
-    public double Price { get; set; }
-    public string? ImgUrl { get; set; }
-    public string? TrailerUrl { get; set; }
-    public DateOnly StartDate { get; set; }
-    public DateOnly EndDate { get; set; }
-    public int MovieStatus { get; set; }
+    public class Movie
+    {
+        public int Id { get; set; }
+        [Required]
+        [MinLength(3)]
+        [MaxLength(50)]
+        public string Name { get; set; }
 
-    public int CinemaId   { get; set; }
-    public Cinema Cinema { get; set; }
-    public int CategoryId { get; set; }
-    public Category Category { get; set; }
-    public ICollection<ActorMovie> ActorMovies { get; set; }
+        [Required]
+        [MinLength(3)]
+        [MaxLength(50)]
+        public string? Description { get; set; }
+        [Required]
+        [Range(0,100)]
+        public double Price { get; set; }
+        
+        public string? ImgUrl { get; set; }
+        public string? TrailerUrl { get; set; }
+
+        [Required]
+        
+        public DateOnly StartDate { get; set; }
+
+        [Required]
+        
+        public DateOnly EndDate { get; set; }
+        [Required]
+         
+        public int MovieStatus { get; set; }
+        [ValidateNever]
+        public int CinemaId { get; set; }
+        [ValidateNever]
+        public Cinema Cinema { get; set; }
+
+        [ValidateNever]
+        public int CategoryId { get; set; }
+        [ValidateNever]
+        public Category Category { get; set; }
+
+        [ValidateNever]
+        public ICollection<ActorMovie> ActorMovies { get; set; }
+
+
+
+    }
 }

@@ -1,3 +1,8 @@
+using Microsoft.EntityFrameworkCore;
+using MoviePoint.DataAccess;
+using MoviePoint.Repositories;
+using MoviePoint.Repositories.IRepositories;
+
 namespace MoviePoint
 {
     public class Program
@@ -9,7 +14,16 @@ namespace MoviePoint
             // Add services to the container.
             builder.Services.AddControllersWithViews();
 
-            var app = builder.Build();
+            builder.Services.AddDbContext<ApplicationDbContext>(options =>
+            options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            builder.Services.AddScoped<IActorRepositories, ActorRepository>();
+            builder.Services.AddScoped<IMovieRepositories, MovieRepository>();
+            builder.Services.AddScoped<ICategoryRepositories, CategoryRepository>();
+            builder.Services.AddScoped<ICinemaRepositories, CinemaRepository>();
+            builder.Services.AddScoped<IActorMovieRepositories, ActorMovieRepository>();
+
+          var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())

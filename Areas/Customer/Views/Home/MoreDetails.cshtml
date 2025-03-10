@@ -4,7 +4,7 @@
     <div class="row">
         <div class="col-md-6">
             <div class="image-container">
-                <img src="~/movies/@Model.ImgUrl" class="img-fluid rounded shadow" alt="@Model.Name">
+                <img src="~/movies/@Model.ImgUrl" class="img-fluid rounded shadow" alt="@Model.Name" width="300px">
             </div>
         </div>
         <div class="col-md-6">
@@ -16,20 +16,22 @@
             <p class="dates"><strong>End Date:</strong> @Model.EndDate</p>
             <p class="description"><strong>Description:</strong> @Model.Description</p>
             <div class="casts">
-                @* @foreach (var item in ViewBag.ActorMovies) *@
-                @* { *@
-                @*     <a href="/Customer/Home/ActorDetails?actorId=@item.Actor.Id"> *@
-                @*         <img src="~/images/cast/@item.Actor.ProfilePicture"> *@
-                @*     </a> *@
+
+
+                @* @foreach (var item in ViewBag.ActorMovies)   *@
+                @*    {   *@
+                @*       <a href="/Customer/Home/ActorDetails?actorId=@item.Actor.Id">   *@
+                @*           <img src="~/images/cast/@item.Actor.ProfilePicture">   *@
+                @*       </a>  *@
                   
                 @* } *@
 
-                @foreach (var item in Model.ActorMovies)  
-                  {  
-                      <a href="/Customer/Home/ActorDetails?actorId=@item.Actor.Id">  
-                      <img src="~/images/cast/@item.Actor.ProfilePicture">
-                    </a>
-                 }
+                @foreach (var item in Model.ActorMovies)    
+                   {    
+                       <a href="/Customer/Home/ActorDetails?actorId=@item.Actor.Id">    
+                        <img src="~/images/cast/@item.Actor.ProfilePicture " width="70px"> 
+                     </a>  
+                  }
 
 
             </div>

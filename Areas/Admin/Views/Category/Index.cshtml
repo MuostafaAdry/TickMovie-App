@@ -1,1 +1,50 @@
-﻿<h1>Admin Category</h1>
+﻿<div class="d-flex justify-content-around">
+    <div>
+        <h1>All Category</h1>
+    </div>
+    <div>
+        <a href="/Admin/Category/Create" class="btn btn-success">Create New</a>
+    </div>
+</div>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Category Name</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody class="table-group-divider">
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@item.Id</th>
+                <td class="font-weight-bolder">@item.Name</td>
+                <td>
+                    <a href="/Admin/Category/Edit?categoryId=@item.Id" class="btn btn-warning">Edit</a>
+                    <button class="btn btn-danger" onclick="confirmDelete(@item.Id)">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    function confirmDelete(categoryId) {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+              
+                window.location.href = "/Admin/Category/Delete?categoryId=" + categoryId;
+            }
+        });
+    }
+</script>

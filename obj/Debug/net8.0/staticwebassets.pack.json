@@ -49,6 +49,14 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\wwwroot\\images\\cast\\014dbe6c-481a-40a4-a161-f96577fd1140.png",
+      "PackagePath": "staticwebassets\\images\\cast\\014dbe6c-481a-40a4-a161-f96577fd1140.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\wwwroot\\images\\cast\\49972df1-6ff7-4430-9adc-9bfdfed44ead.png",
+      "PackagePath": "staticwebassets\\images\\cast\\49972df1-6ff7-4430-9adc-9bfdfed44ead.png"
+    },
+    {
       "Id": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\wwwroot\\images\\cast\\cast1.png",
       "PackagePath": "staticwebassets\\images\\cast\\cast1.png"
     },
@@ -335,6 +343,18 @@
     {
       "Id": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\wwwroot\\logo.png",
       "PackagePath": "staticwebassets\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\wwwroot\\movies\\10a7a3d9-252b-4f4d-92c0-456d0551907a.png",
+      "PackagePath": "staticwebassets\\movies\\10a7a3d9-252b-4f4d-92c0-456d0551907a.png"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\wwwroot\\movies\\35ac8198-f930-4406-bd30-4f2d761ab189.jpg",
+      "PackagePath": "staticwebassets\\movies\\35ac8198-f930-4406-bd30-4f2d761ab189.jpg"
+    },
+    {
+      "Id": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\wwwroot\\movies\\b8eabcc2-d2ac-4212-88ba-ba4012802356.png",
+      "PackagePath": "staticwebassets\\movies\\b8eabcc2-d2ac-4212-88ba-ba4012802356.png"
     },
     {
       "Id": "C:\\Users\\user\\Desktop\\.NetTasks\\MoviePoint\\wwwroot\\movies\\movie1.png",

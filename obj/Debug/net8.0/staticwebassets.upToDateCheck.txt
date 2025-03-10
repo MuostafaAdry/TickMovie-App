@@ -9,6 +9,8 @@ wwwroot\css\sb-admin-2.css
 wwwroot\css\sb-admin-2.min.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
+wwwroot\images\cast\014dbe6c-481a-40a4-a161-f96577fd1140.png
+wwwroot\images\cast\49972df1-6ff7-4430-9adc-9bfdfed44ead.png
 wwwroot\images\cast\cast1.png
 wwwroot\images\cast\cast2.png
 wwwroot\images\cast\cast3.png
@@ -81,6 +83,9 @@ wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js
 wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
 wwwroot\logo.png
+wwwroot\movies\10a7a3d9-252b-4f4d-92c0-456d0551907a.png
+wwwroot\movies\35ac8198-f930-4406-bd30-4f2d761ab189.jpg
+wwwroot\movies\b8eabcc2-d2ac-4212-88ba-ba4012802356.png
 wwwroot\movies\movie1.png
 wwwroot\movies\movie10.png
 wwwroot\movies\movie2.png
