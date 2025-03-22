@@ -31,3 +31,20 @@
 
     </tbody>
 </table>
+
+<div class="row d-flex ms-4" style="margin-bottom: 50px;">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            @for (int i = 0; i <= ViewBag.paginationPages; i++)
+            {
+                <li class="page-item "><a class="page-link" href="/Customer/Cinema/Index?page=@(i+1)">@(i + 1)</a></li>
+            }
+            <li>
+                <a href="/Customer/Cinema/Index" class="btn btn-primary ms-2">All Products</a>
+
+            </li>
+
+
+        </ul>
+    </nav>
+</div>

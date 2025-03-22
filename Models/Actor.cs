@@ -17,12 +17,12 @@ namespace MoviePoint.Models
         public string LastName { get; set; }
         [Required]
         [MinLength(3)]
-        [MaxLength(20)]
+       
         public string Bio { get; set; }
         public string? ProfilePicture { get; set; }
         [Required]
         [MinLength(3)]
-        [MaxLength(20)]
+      
         public string News { get; set; }
         [ValidateNever]
         public ICollection<ActorMovie> ActorMovies { get; set; }

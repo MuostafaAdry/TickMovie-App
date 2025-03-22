@@ -1,9 +1,19 @@
-﻿<div class="d-flex justify-content-around">
-    <div>
-        <h1>All Category</h1>
-    </div>
-    <div>
-        <a href="/Admin/Category/Create" class="btn btn-success">Create New</a>
+﻿
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center">
+        <h1 class="text-primary">All Categories</h1>
+
+        <!-- Search Bar -->
+        <form class="d-flex">
+            <input type="text" class="form-control me-2" id="search"
+                   name="query" placeholder="Search...">
+            <button type="submit" class="btn btn-primary">
+                Search
+            </button>
+        </form>
+        <div>
+            <a href="/Admin/Category/Create" class="btn btn-success">Create New</a>
+        </div>
     </div>
 </div>
 
@@ -29,6 +39,22 @@
         }
     </tbody>
 </table>
+<div class="row d-flex  justify-content-center align-items-center">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination ">
+            @for (int i = 0; i <= ViewBag.paginationPages; i++)
+            {
+                <li class="page-item "><a class="page-link" href="/Admin/Category/Index?page=@(i+1)">@(i + 1)</a></li>
+            }
+            <li>
+                <a href="/Admin/Category/Index" class="btn btn-primary ms-2">All Categories</a>
+
+            </li>
+
+
+        </ul>
+    </nav>
+</div>
 
 <script>
     function confirmDelete(categoryId) {

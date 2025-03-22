@@ -1,12 +1,21 @@
-﻿<div class="d-flex justify-content-around">
-    <div>
-        <h1>All Actoes</h1>
-    </div>
-    <div>
-        <a href="/Admin/Actor/Create" class="btn btn-success">Create New</a>
+﻿
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center">
+        <h1 class="text-primary">All Actors</h1>
+
+        <!-- Search Bar -->
+        <form class="d-flex">
+            <input type="text" class="form-control me-2" id="search"
+                   name="query" placeholder="Search...">
+            <button type="submit" class="btn btn-primary">
+                Search
+            </button>
+        </form>
+        <a href="/Admin/Actor/Create" class="btn btn-success">
+            <i class="fas fa-user-plus"></i> Create New
+        </a>
     </div>
 </div>
-
 <table class="table table-hover">
     <thead>
         <tr>
@@ -27,7 +36,10 @@
                 <td class="font-weight-bolder">@item.FirstName</td>
                 <td class="font-weight-bolder">@item.LastName</td>
                 <td class="font-weight-bolder">@(item.Bio.Length > 20 ? item.Bio.Substring(0, 20) + "..." : item.Bio)</td>
-                 <td class="font-weight-bolder"><img src="~/images/cast/@item.ProfilePicture" width="100px"/>  </td>
+                <td class="font-weight-bolder">
+                    <img src="~/images/cast/@item.ProfilePicture" width="100px" height="100px" style="border-radius: 50%;" />
+                </td>
+
                 <td class="font-weight-bolder">@(item.News.Length > 20 ? item.News.Substring(0, 20) + "..." : item.News)</td>
                 <td>
                     <a href="/Admin/Actor/Edit?actorId=@item.Id" class="btn btn-warning">Edit</a>
@@ -37,7 +49,22 @@
         }
     </tbody>
 </table>
+<div class="row d-flex justify-content-center align-items-center">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination">
+            @for (int i = 0; i <= ViewBag.paginationPages; i++)
+            {
+                <li class="page-item "><a class="page-link" href="/Admin/Movie/Index?page=@(i+1)">@(i + 1)</a></li>
+            }
+            <li>
+                <a href="/Admin/Movie/Index" class="btn btn-primary ms-2">All Movies</a>
 
+            </li>
+
+
+        </ul>
+    </nav>
+</div>
 <script>
     function confirmDelete(actorId) {
         Swal.fire({

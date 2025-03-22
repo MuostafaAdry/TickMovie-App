@@ -1,22 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MoviePoint.DataAccess;
 using MoviePoint.Models;
 using MoviePoint.Repositories;
 using MoviePoint.Repositories.IRepositories;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace MoviePoint.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin,SuperAdmin")]
     public class MovieController : Controller
     {
-        //ApplicationDbContext dbContext = new ApplicationDbContext();
-
-        //MovieRepository movieRepository = new MovieRepository();
-        //CategoryRepository categoryRepository = new CategoryRepository();
-        //CinemaRepository cinemaRepository = new CinemaRepository();
-        //ActorRepository actorRepository = new ActorRepository();
-        //ActorMovieRepository actorMovieRepository = new ActorMovieRepository();
+ 
 
         private readonly IMovieRepositories movieRepository;
         private readonly ICategoryRepositories categoryRepository;
@@ -37,10 +34,23 @@ namespace MoviePoint.Areas.Admin.Controllers
             this.actorRepository = actorRepository;
             this.actorMovieRepository = actorMovieRepository;
         }
-        public IActionResult Index()
+        public IActionResult Index(string query, int page =1)
         {
-            //var movies = dbContext.Movies.Include(e=>e.Category).Include(e=>e.Cinema);
+            
             var movies = movieRepository.Get(includes: [e => e.Category, e => e.Cinema]);
+            //filter
+            if (query != null)
+            {
+                movies = movies.Where(e => e.Name.Contains(query)
+                || e.Cinema.Name.Contains(query)
+                || e.Category.Name.Contains(query));
+            }
+
+            //pagination
+            var paginationPages = (int)Math.Ceiling((decimal)movies.Count() / 7);
+            if (page > paginationPages) page = paginationPages;
+            movies = movies.Skip((page - 1) * 7).Take(7);
+            ViewBag.paginationPages = paginationPages;
 
 
             return View(movies.ToList());

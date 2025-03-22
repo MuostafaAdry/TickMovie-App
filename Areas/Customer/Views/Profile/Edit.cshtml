@@ -1,0 +1,81 @@
+﻿@model MoviePoint.Models.ViewModel.RegisterVM
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="row">
+    <div class="col-md-6 mx-auto">
+        <div class="card shadow p-4">
+            <h2 class="text-center">Edit Profile</h2>
+            <hr />
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                <input type="hidden" asp-for="Id" />
+
+                <div class="form-group">
+                    <label asp-for="UserName" class="control-label"></label>
+                    <input asp-for="UserName" class="form-control" placeholder="Enter your username" />
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Email" class="control-label"></label>
+                    <input asp-for="Email" class="form-control" placeholder="Enter your email" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="OldPassword" class="control-label">Old Password</label>
+                    <input name="OldPassword" type="password" class="form-control" placeholder="Enter old password" />
+                    <span class="text-danger" id="OldPasswordError"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Password" class="control-label"></label>
+                    <input asp-for="Password" type="password" class="form-control" placeholder="Enter new password" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ConfirmPassword" class="control-label"></label>
+                    <input asp-for="ConfirmPassword" type="password" class="form-control" placeholder="Confirm new password" />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+
+                <div class="form-group text-center">
+                    <label asp-for="ImgProfile" class="control-label"></label>
+                    <input type="file" name="Img" class="form-control" />
+                    <span asp-validation-for="ImgProfile" class="text-danger"></span>
+                    @if (!string.IsNullOrEmpty(Model.ImgProfile))
+                    {
+                        <img src="~/images/@Model.ImgProfile" class="img-thumbnail mt-2" style="max-width: 150px;" />
+                    }
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Address" class="control-label"></label>
+                    <input asp-for="Address" class="form-control" placeholder="Enter your address" />
+                    <span asp-validation-for="Address" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="PhoneNumber" class="control-label"></label>
+                    <input asp-for="PhoneNumber" class="form-control" placeholder="Enter your phone number" />
+                    <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                </div>
+
+                <div class="form-group text-center">
+                    <input type="submit" value="Save Changes" class="btn btn-success btn-block mt-3" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+ 
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

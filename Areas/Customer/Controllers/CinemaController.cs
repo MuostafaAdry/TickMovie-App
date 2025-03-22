@@ -18,10 +18,15 @@ namespace MoviePoint.Areas.Customer.Controllers
             this.cinemaRepository = cinemaRepository;
             this.movieRepository = movieRepository;
         }
-        public IActionResult Index()
+        public IActionResult Index(int page=1)
         { 
             //var Cinemas = dbContext.Cinemas;
             var Cinemas = cinemaRepository.Get();
+            //pagination
+            var paginationPages = (int)Math.Ceiling((decimal)Cinemas.Count() / 7);
+            if (page > paginationPages) page = paginationPages;
+            Cinemas = Cinemas.Skip((page - 1) * 7).Take(7);
+            ViewBag.paginationPages = paginationPages;
             return View(Cinemas.ToList());
         }
 

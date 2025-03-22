@@ -7,7 +7,8 @@
 <link rel="stylesheet" href="~/css/Movies.css" />
 }
 <div class="container">
-    </div>
+
+     
     <div class="row">
         @foreach (var item in Model)
         {
@@ -50,16 +51,16 @@
                             <a href="/Customer/Home/MoreDetails?movieId=@item.Id" class="btn btn-success">More Details</a>
                             @if (item.MovieStatus == 1)
                             {
-                                <button type="button" class="btn btn-primary book-btn">Book Ticket</button>
+                                <a href="/Customer/Home/MoreDetails?movieId=@item.Id" class="btn btn-primary book-btn">Book Ticket</a>
                             }
-                            else if (item.MovieStatus == 0)
-                            {
-                                <button type="button" class="btn btn-secondary">Book Ticket</button>
-                            }
-                            else
-                            {
-                                <button type="button" class="btn btn-warning">Book Ticket</button>
-                            }
+                            @* else if (item.MovieStatus == 0) *@
+                            @* { *@
+                            @*     <a href="/Customer/Home/MoreDetails?movieId=@item.Id" class="btn btn-secondary">Book Ticket</a> *@
+                            @* } *@
+                            @* else *@
+                            @* { *@
+                            @*     <a href="/Customer/Home/MoreDetails?movieId=@item.Id" class="btn btn-warning">Book Ticket</a> *@
+                            @* } *@
                              
                         </div>
 
@@ -68,4 +69,20 @@
             </div>
         }
     </div>
+<div class="row d-flex ms-4" style="margin-bottom: 50px;">
+    <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center">
+            @for (int i = 0; i <= ViewBag.paginationPages; i++)
+            {
+                    <li class="page-item "><a class="page-link" href="/Customer/Home/Index?page=@(i+1)">@(i + 1)</a></li>
+            }
+            <li>
+                    <a href="/Customer/Home/Index" class="btn btn-primary ms-2">All Products</a>
+
+            </li>
+
+
+        </ul>
+    </nav>
+</div>
 </div>

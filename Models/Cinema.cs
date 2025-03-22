@@ -14,12 +14,12 @@ namespace MoviePoint.Models
 
         [Required]
         [MinLength(3)]
-        [MaxLength(50)]
+       
         public string? Description { get; set; }  
         public string? CinemaLogo { get; set; }
         [Required]
         [MinLength(3)]
-        [MaxLength(50)]
+        [MaxLength(255)]
         public string Address { get; set; }
         [ValidateNever]
         public List<Movie> Moives { get; set; }

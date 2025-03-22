@@ -14,7 +14,7 @@ namespace MoviePoint.Models
 
         [Required]
         [MinLength(3)]
-        [MaxLength(50)]
+         
         public string? Description { get; set; }
         [Required]
         [Range(0,100)]

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿ using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 using MoviePoint.DataAccess;
@@ -10,13 +11,12 @@ using System.Linq.Expressions;
 namespace MoviePoint.Areas.Customer.Controllers
 {
     [Area("Customer")]
+    //[Authorize(Roles = "Customer")]
     public class HomeController : Controller
     {
          ApplicationDbContext dbContext = new ApplicationDbContext();
 
-        //MovieRepository movieRepository = new MovieRepository();
-        //CategoryRepository categoryRepository = new CategoryRepository();
-        //ActorMovieRepository actorMovieRepository = new ActorMovieRepository();
+       
         private readonly IMovieRepositories movieRepository;
         private readonly ICategoryRepositories categoryRepository;
         private readonly IActorRepositories actorRepository;
@@ -31,8 +31,12 @@ namespace MoviePoint.Areas.Customer.Controllers
             this.categoryRepository = categoryRepository;
             this.actorRepository = actorRepository;
         }
+        public IActionResult NotFoundPage()
+        {
+            return View();
+        }
 
-        public IActionResult Index(string? categoryName,string? movieName)
+        public IActionResult Index(string? categoryName,string? movieName,int page=1)
         {
             //IQueryable<Movie> Movies = dbContext.Movies.Include(e => e.Cinema).Include(e => e.Category);
             //var Movies = movieRepository.Get(includes: [e => e.Cinema, em => em.Category]);
@@ -49,7 +53,11 @@ namespace MoviePoint.Areas.Customer.Controllers
             //filter  with category
             //ViewBag.Categories = dbContext.Categories.ToList();
             ViewBag.Categories = categoryRepository.Get();
-           
+            //pagination
+            var paginationPages = (int)Math.Ceiling((decimal)Movies.Count()/8);
+            if (page > paginationPages) page = paginationPages;
+            Movies = Movies.Skip((page - 1) * 8).Take(8);
+            ViewBag.paginationPages = paginationPages;
             return View(Movies.ToList());
         }
         public IActionResult Privacy()
@@ -124,6 +132,11 @@ namespace MoviePoint.Areas.Customer.Controllers
                 return View(actor);
             }
             return View("Index");
+        }
+
+        public IActionResult AccessDenied()
+        {
+            return View();
         }
     }
 }

@@ -1,12 +1,15 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MoviePoint.DataAccess;
 using MoviePoint.Models;
 using MoviePoint.Repositories;
 using MoviePoint.Repositories.IRepositories;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace MoviePoint.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin,SuperAdmin")]
     public class CinemaController : Controller
     {
         //ApplicationDbContext dbContext = new ApplicationDbContext();
@@ -17,10 +20,20 @@ namespace MoviePoint.Areas.Admin.Controllers
         {
             this.cinemaRepository = cinemaRepository;
         }
-        public IActionResult Index()
+        public IActionResult Index(string query,int page =1)
         {
             //var cinemas = dbContext.Cinemas;
             var cinemas = cinemaRepository.Get();
+            //filter
+            if (query != null)
+            {
+                cinemas = cinemas.Where(e => e.Name.Contains(query));
+            }
+            //pagination
+            var paginationPages = (int)Math.Ceiling((decimal)cinemas.Count() / 7);
+            if (page > paginationPages) page = paginationPages;
+            cinemas = cinemas.Skip((page - 1) * 7).Take(7);
+            ViewBag.paginationPages = paginationPages;
             return View(cinemas.ToList());
         }
 

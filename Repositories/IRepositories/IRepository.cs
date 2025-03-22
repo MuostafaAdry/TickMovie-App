@@ -14,7 +14,7 @@ namespace MoviePoint.Repositories.IRepositories
         public void Delete(List<T> entities)  ;
         public void Commit() ;
 
-        public IEnumerable<T> Get(
+        public IQueryable<T> Get(
          Expression<Func<T, bool>>? filter = null,
         //Expression<IIncludableQueryable<T, object>>[]? thenincludes = null,
          Func<IQueryable<T>, IIncludableQueryable<T, object>>? includeProps = null,

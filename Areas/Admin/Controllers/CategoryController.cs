@@ -1,28 +1,38 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MoviePoint.DataAccess;
 using MoviePoint.Models;
 using MoviePoint.Repositories;
 using MoviePoint.Repositories.IRepositories;
 using System.Reflection.Metadata.Ecma335;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace MoviePoint.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = "Admin,SuperAdmin")]
     public class CategoryController : Controller
     {
-        //ApplicationDbContext dbContext = new ApplicationDbContext();
-        //CategoryRepository categoryRepository = new CategoryRepository();
-        //CategoryRepository categoryRepository;
         private readonly ICategoryRepositories categoryRepository ;
         public CategoryController(ICategoryRepositories categoryRepository)
         {
             this.categoryRepository = categoryRepository;
         }
-        public IActionResult Index()
+        public IActionResult Index(string query,  int page =1)
         {
-            //var Categories = dbContext.Categories;
-            var Categories = categoryRepository.Get();
+             var Categories = categoryRepository.Get();
+            //filter
+            if (query != null)
+            {
+                Categories = Categories.Where(e => e.Name.Contains(query)
+                );
+            }
+            //pagination
+            var paginationPages = (int)Math.Ceiling((decimal)Categories.Count() / 7);
+            if (page > paginationPages) page = paginationPages;
+            Categories = Categories.Skip((page - 1) * 7).Take(7);
+            ViewBag.paginationPages = paginationPages;
             return View(Categories.ToList());
         }
 

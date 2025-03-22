@@ -24,7 +24,7 @@ namespace MoviePoint.Repository
         public void Delete(List<T> entities) => dbSet.RemoveRange(entities);
         public void Commit() => dbContext.SaveChanges();
 
-        public IEnumerable<T> Get(
+        public IQueryable<T> Get(
             Expression<Func<T, bool>>? filter = null,
             Func<IQueryable<T>, IIncludableQueryable<T, object>>? includeProps = null,
             Expression<Func<T, object>>[]? includes = null,
@@ -55,7 +55,7 @@ namespace MoviePoint.Repository
                 query = query.AsNoTracking();
             }
 
-            return query.ToList();
+            return query ;
         }
 
         public T? GetOne(

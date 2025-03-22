@@ -1,13 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.EntityFrameworkCore;
 using MoviePoint.DataAccess;
 using MoviePoint.Models;
 using MoviePoint.Repositories;
 using MoviePoint.Repositories.IRepositories;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace MoviePoint.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles ="Admin,SuperAdmin")]
     public class ActorController : Controller
     {
         //ApplicationDbContext dbContext = new ApplicationDbContext();
@@ -18,10 +22,24 @@ namespace MoviePoint.Areas.Admin.Controllers
         {
             this.actorRepository = actorRepository;
         }
-        public IActionResult Index()
+      
+        public IActionResult Index(string query ,int page=1)
         {
             //var actors = dbContext.Actors;
             var actors = actorRepository.Get();
+            //filter
+            if (query != null)
+            {
+                actors = actors.Where(e => e.FirstName.Contains(query)||e.LastName.Contains(query));
+                 
+               
+            }
+            //pagination
+            var paginationPages = (int)Math.Ceiling((decimal)actors.Count() / 7);
+            if (page > paginationPages) page = paginationPages;
+            actors = actors.Skip((page - 1) * 7).Take(7);
+            ViewBag.paginationPages = paginationPages;
+
             return View(actors.ToList());
         }
 
