@@ -8,6 +8,7 @@ namespace MoviePoint.Repositories
     public class CartRepository:Repository<Cart>,ICartRepository
     {
         private readonly ApplicationDbContext _dbContext;
+        
         public CartRepository(ApplicationDbContext dbContext):base(dbContext)
         {
             this._dbContext = dbContext;
